@@ -1,31 +1,42 @@
 var stateMgmt = require('./stateMgmt')
 var drawCanvas = require('./drawCanvas')
 var animate = require('./animate')
+var myopacity
 
 function init(){
   // triggers the screensaver after X milliseconds of inactivity
 
-  var delay = 4000
+  var delay = 15000
   var time
 
   window.onload = resetTimer
-  document.onmousemove = resetTimer
-  document.onkeypress = resetTimer
-  document.onscroll = resetTimer
+  var events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
+  events.forEach(function(name) {
+    document.addEventListener(name, resetTimer, true);
+  });
 
   function showScreensaver() {
-    // console.log("inactivity detected: now showing the dreamsaver")
     stateMgmt.set('animate', true);
     animate.sweep();
 
     stateMgmt.set('showCanvas', true);
     drawCanvas.fromState();
 
+    myopacity = 0;
+    MyFadeFunction();
   }
 
-  function hideScreensaver() {
-    // console.log("activity detected: now hiding the dreamsaver")
 
+  function MyFadeFunction() {
+     if (myopacity<1) {
+        myopacity += .005;
+       setTimeout(function(){MyFadeFunction()},100);
+     }
+     document.getElementById('dreamsaver').style.opacity = myopacity;
+  }
+
+
+  function hideScreensaver() {
     stateMgmt.set('animate', false);
     animate.resetSweep();
 

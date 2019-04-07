@@ -2,7 +2,7 @@ var stateMgmt = require('./stateMgmt')
 var state
 var rangesMgmt = require('./rangesMgmt')
 var ranges = rangesMgmt.get()
-var canvas = document.getElementById('canvas');
+var canvas = document.getElementById('dreamsaver');
 var context = canvas.getContext('2d');
 const deg_to_rad = Math.PI / 180.0;
 var rootX
