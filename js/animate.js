@@ -36,7 +36,7 @@ var growing = {
 
 function sweep(){
   state = stateMgmt.get()
-  console.log("animate.js / state.animate: " + state.animate)
+  // console.log("animate.js / state.animate: " + state.animate)
   if (state.animate) {
     sweepTimer = setInterval(function(){ nextFrame() }, 200/state.urgncy)
   }

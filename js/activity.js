@@ -5,15 +5,16 @@ var animate = require('./animate')
 function init(){
   // triggers the screensaver after X milliseconds of inactivity
 
-  var delay = 1000
+  var delay = 4000
   var time
 
   window.onload = resetTimer
   document.onmousemove = resetTimer
   document.onkeypress = resetTimer
+  document.onscroll = resetTimer
 
   function showScreensaver() {
-    console.log("inactivity detected: now showing the dreamsaver")
+    // console.log("inactivity detected: now showing the dreamsaver")
     stateMgmt.set('animate', true);
     animate.sweep();
 
@@ -23,7 +24,7 @@ function init(){
   }
 
   function hideScreensaver() {
-    console.log("activity detected: now hiding the dreamsaver")
+    // console.log("activity detected: now hiding the dreamsaver")
 
     stateMgmt.set('animate', false);
     animate.resetSweep();

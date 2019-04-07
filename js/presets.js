@@ -8,7 +8,7 @@ var presets = [
   , {repeat: 6,  yessss: 14, widthh: 60,  tensor: 20, quirkk: 0,   energy: 15}
   , {repeat: 5,  yessss: 9,  widthh: 180, tensor: 20, quirkk: -60, energy: 25}
   , {repeat: 6,  yessss: 9,  widthh: 60,  tensor: 8,  quirkk: 0,   energy: 60}
-  , {repeat: 16, yessss: 13, widthh: 60,  tensor: 13, quirkk: 0,   energy: 20}
+  , {repeat: 16, yessss: 11, widthh: 60,  tensor: 13, quirkk: 0,   energy: 20}
   , {repeat: 3,  yessss: 7,  widthh: 6,   tensor: 4,  quirkk: -90, energy: 80}
   , {repeat: 4,  yessss: 10, widthh: 45,  tensor: 8,  quirkk: 90,  energy: 40}
   , {repeat: 7,  yessss: 11, widthh: 90,  tensor: 13, quirkk: 0,   energy: 50}
