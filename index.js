@@ -1,5 +1,6 @@
 // TODO:
-// strip out keybindings? or replace with Esc
+// on load, just choose one of the presets
+// remove params
 // don't show on mobile
 // set up some presets, or semi-random settings
 // create demo.html with timeout triggered by X seconds of inaction
