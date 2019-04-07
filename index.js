@@ -1,12 +1,14 @@
 // TODO:
 // on load, just choose one of the presets
 // replace preset 1 with the null preset
-// set up some presets, or semi-random settings
 // create demo.html with timeout triggered by X seconds of inaction
 // fade in opacity over Y seconds
 // add some link out to source
 // rsync -avz --exclude 'node_modules' --exclude '.*' ~/projects/fractal-tree-node/ rdb@richdecibels.com:~/websites/richdecibels.com/fractal-tree/
 
+
+var inactivity = require('./js/inactivity')
+inactivity.init();
 
 var stateMgmt = require('./js/stateMgmt')
 stateMgmt.init();
