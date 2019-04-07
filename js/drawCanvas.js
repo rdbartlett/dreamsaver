@@ -15,19 +15,30 @@ function setRoot(){
   rootY = canvas.height / 2;
 }
 
+
 function fromState(){
   state = stateMgmt.get();
-  var rgb = 'rgb(' + state.red + ', ' + state.green + ', ' + state.blue + ')'
-  context.fillStyle = rgb
-  context.strokeStyle = rgb
-  context.globalAlpha = state.energy / 100;
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  context.lineWidth = state.lineWidth;
-  context.beginPath();
-  treeIteration = 0;
-  drawReflectedTrees(rootX, rootY, state.angle, Number(state.yessss.toFixed(0)))
-  context.closePath();
-  context.stroke();
+  if (state.showCanvas){
+    console.log('showing the canvas')
+    canvas.style.display = 'block'
+
+    var rgb = 'rgb(' + state.red + ', ' + state.green + ', ' + state.blue + ')'
+    context.fillStyle = rgb
+    context.strokeStyle = rgb
+    context.globalAlpha = state.energy / 100;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.lineWidth = state.lineWidth;
+    context.beginPath();
+    treeIteration = 0;
+    drawReflectedTrees(rootX, rootY, state.angle, Number(state.yessss.toFixed(0)))
+    context.closePath();
+    context.stroke();
+  }
+
+  else{
+    console.log('hiding the canvas')
+    canvas.style.display = 'none'
+  }
 }
 
 function updateStateWithRanges(){

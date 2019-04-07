@@ -1,14 +1,14 @@
 // TODO:
+// fade in opacity over X seconds after Y seconds inaction
+// fade out again after key or mouse action
 // on load, just choose one of the presets
 // replace preset 1 with the null preset
-// create demo.html with timeout triggered by X seconds of inaction
-// fade in opacity over Y seconds
 // add some link out to source
 // rsync -avz --exclude 'node_modules' --exclude '.*' ~/projects/fractal-tree-node/ rdb@richdecibels.com:~/websites/richdecibels.com/fractal-tree/
 
 
-var inactivity = require('./js/inactivity')
-inactivity.init();
+var activity = require('./js/activity')
+activity.init();
 
 var stateMgmt = require('./js/stateMgmt')
 stateMgmt.init();
@@ -26,6 +26,6 @@ window.addEventListener('resize', function() {
 
 var presets = require('./js/presets')
 var keys = require('./js/keys')
-var animate = require('./js/animate')
 
+var animate = require('./js/animate')
 animate.sweep();

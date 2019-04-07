@@ -5,7 +5,8 @@ function init(){
     quirkk: 0, widthh: 180, energy: 30, repeat: 16, tensor: 13, yessss: 10,
     angle: 90, pointSize: 2, lineWidth: 1,
     points: false, orbitt: false, urgncy: 2,
-    red: 255, green: 0, blue: 150
+    red: 255, green: 0, blue: 150,
+    showCanvas: false
   }
 }
 
