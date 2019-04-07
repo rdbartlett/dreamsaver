@@ -6,7 +6,7 @@ function init(){
     angle: 90, pointSize: 2, lineWidth: 1,
     points: false, orbitt: false, urgncy: 2,
     red: 255, green: 0, blue: 150,
-    showCanvas: false
+    showCanvas: false, animate: false
   }
 }
 

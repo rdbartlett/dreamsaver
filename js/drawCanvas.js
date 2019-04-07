@@ -19,7 +19,6 @@ function setRoot(){
 function fromState(){
   state = stateMgmt.get();
   if (state.showCanvas){
-    console.log('showing the canvas')
     canvas.style.display = 'block'
 
     var rgb = 'rgb(' + state.red + ', ' + state.green + ', ' + state.blue + ')'
@@ -36,7 +35,6 @@ function fromState(){
   }
 
   else{
-    console.log('hiding the canvas')
     canvas.style.display = 'none'
   }
 }

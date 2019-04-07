@@ -7,9 +7,6 @@
 // rsync -avz --exclude 'node_modules' --exclude '.*' ~/projects/fractal-tree-node/ rdb@richdecibels.com:~/websites/richdecibels.com/fractal-tree/
 
 
-var activity = require('./js/activity')
-activity.init();
-
 var stateMgmt = require('./js/stateMgmt')
 stateMgmt.init();
 
@@ -28,4 +25,7 @@ var presets = require('./js/presets')
 var keys = require('./js/keys')
 
 var animate = require('./js/animate')
-animate.sweep();
+animate.init()
+
+var activity = require('./js/activity')
+activity.init();

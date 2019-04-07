@@ -3,7 +3,7 @@ var rangesMgmt = require('./rangesMgmt')
 var drawCanvas = require('./drawCanvas')
 
 var presets = [
-    {repeat: 1,  yessss: 7,  widthh: 19,  tensor: 12, quirkk: 7,   energy: 100}
+    {repeat: 16, yessss: 10, widthh: 180, tensor: 13, quirkk: 0,   energy: 30}
   , {repeat: 2,  yessss: 9,  widthh: 44,  tensor: 6,  quirkk: -26, energy: 100}
   , {repeat: 6,  yessss: 14, widthh: 60,  tensor: 20, quirkk: 0,   energy: 15}
   , {repeat: 5,  yessss: 9,  widthh: 180, tensor: 20, quirkk: -60, energy: 25}

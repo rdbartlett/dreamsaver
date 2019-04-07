@@ -2,10 +2,16 @@ var stateMgmt = require('./stateMgmt')
 var state = stateMgmt.get()
 var rangesMgmt = require('./rangesMgmt')
 var ranges = rangesMgmt.get()
+var playing
 
 var drawCanvas = require('./drawCanvas')
 
 const attrs = [ 'quirkk', 'widthh', 'energy', 'repeat', 'tensor', 'yessss' ]
+
+function init() {
+  playing = false
+}
+
 
 // If widthh is sweeping from 20 to 50 degrees and back to 20
 // in a period of 10 frames,
@@ -29,7 +35,11 @@ var growing = {
 }
 
 function sweep(){
-  sweepTimer = setInterval(function(){ nextFrame() }, 200/state.urgncy)
+  state = stateMgmt.get()
+  console.log("animate.js / state.animate: " + state.animate)
+  if (state.animate) {
+    sweepTimer = setInterval(function(){ nextFrame() }, 200/state.urgncy)
+  }
 }
 
 function resetSweep(){
@@ -87,8 +97,6 @@ function nextFrame(){
   drawCanvas.fromState();
 }
 
-playing = false
-
 function playOrPause(){
   if(!playing) {
     playing = !playing
@@ -110,4 +118,4 @@ function play(){
   resetSweep()
 }
 
-module.exports = {sweep, resetSweep, playOrPause, playing, play, pause}
+module.exports = {init, sweep, resetSweep, playOrPause, playing, play, pause}
