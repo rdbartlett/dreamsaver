@@ -8,7 +8,6 @@ var attrs = rangesMgmt.attrs
 var drawCanvas = require('./drawCanvas')
 var animate = require('./animate')
 var presets = require('./presets')
-var slides = require('./slides')
 
 Mousetrap.bind('1', function() { presets.load(0) });
 Mousetrap.bind('2', function() { presets.load(1) });
@@ -112,11 +111,6 @@ Mousetrap.bind('p', function() { toggle('points') });
 
 
 Mousetrap.bind('space', animate.playOrPause);
-
-// add bounds
-Mousetrap.bind('down', slides.next);
-Mousetrap.bind('up', slides.prev);
-Mousetrap.bind('right', slides.last);
 
 
 function toggle(attr){

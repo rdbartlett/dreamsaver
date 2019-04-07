@@ -1,3 +1,12 @@
+// TODO:
+// strip out keybindings
+// strip out UI
+// set up some presets, or semi-random settings
+// create demo.html with timeout triggered by X seconds of inaction
+// fade in opacity over Y secondss
+// add some link out to source
+
+
 var stateMgmt = require('./js/stateMgmt')
 stateMgmt.init();
 
@@ -19,9 +28,6 @@ var keys = require('./js/keys')
 var animate = require('./js/animate')
 
 animate.sweep();
-
-var slides = require('./js/slides')
-slides.show(1)
 
 var params = require('./js/params')
 params.drawCanvasFromURL()

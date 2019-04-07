@@ -46,7 +46,6 @@ function load(index){
   drawCanvas.fromState()
 
   state = stateMgmt.get()
-  if(state.tutorial) ui.updateTutorialSlideWithState(state)
 }
 
 module.exports = { presets, load }

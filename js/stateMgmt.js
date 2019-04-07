@@ -9,8 +9,7 @@ function init(){
     points: false, orbitt: false, urgncy: 2,
     red: 255, green: 0, blue: 150,
     modes: ['quirkk', 'widthh', 'energy', 'repeat', 'tensor', 'yessss', 'huuuue', 'urgncy'],
-    modeIndex: 0,
-    tutorial: false
+    modeIndex: 0
   }
   ui.updateState(state)
   return state
