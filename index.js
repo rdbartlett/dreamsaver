@@ -1,6 +1,6 @@
 // TODO:
 // on load, just choose one of the presets
-// remove params
+// remove partams
 // don't show on mobile
 // set up some presets, or semi-random settings
 // create demo.html with timeout triggered by X seconds of inaction
@@ -27,6 +27,3 @@ var keys = require('./js/keys')
 var animate = require('./js/animate')
 
 animate.sweep();
-
-var params = require('./js/params')
-params.drawCanvasFromURL()
