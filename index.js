@@ -1,6 +1,6 @@
 // TODO:
-// strip out keybindings
-// strip out UI
+// strip out keybindings? or replace with Esc
+// don't show on mobile
 // set up some presets, or semi-random settings
 // create demo.html with timeout triggered by X seconds of inaction
 // fade in opacity over Y secondss
@@ -12,8 +12,6 @@ stateMgmt.init();
 
 var rangesMgmt = require('./js/rangesMgmt')
 rangesMgmt.init();
-
-var ui = require('./js/ui')
 
 var drawCanvas = require('./js/drawCanvas')
 drawCanvas.setRoot();

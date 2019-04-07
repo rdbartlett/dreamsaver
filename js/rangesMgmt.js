@@ -1,5 +1,3 @@
-var ui = require('./ui')
-
 var ranges = {}
 
 const attrs = [ 'quirkk', 'widthh', 'energy', 'repeat', 'tensor', 'yessss' ]
@@ -16,7 +14,6 @@ function init(){
 
   attrs.forEach(function(attr){
     updateDeltas(attr)
-    ui.updateRange(attr, ranges[attr])
   })
 
   return ranges
@@ -64,7 +61,6 @@ function inc(attr, key, by){
   }
   else{ ranges[attr][key] += by }
   updateDeltas(attr)
-  ui.updateRange(attr, ranges[attr])
 }
 
 function dec(attr, key, by){
@@ -76,7 +72,6 @@ function dec(attr, key, by){
   }
   else{ ranges[attr][key] -= by }
   updateDeltas(attr)
-  ui.updateRange(attr, ranges[attr])
 }
 
 module.exports = { init, get, inc, dec, getDeltas, attrs, set }

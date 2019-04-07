@@ -23,103 +23,11 @@ rsync -avz --exclude 'node_modules' --exclude '.*' ~/projects/fractal-tree-node/
         padding: 0;
         font-family: monospace;
       }
-      #stateReader{
-        position: absolute;
-        bottom: 15px;
-        display: none;
-      }
-      #stateReader table{
-        border-spacing: 0
-      }
-      #stateReader tr{
-        color: white;
-      }
-      #head td, #yessssUI td, #pointsUI td{
-        border-bottom: 1px solid white;
-      }
-      #stateReader td{
-        padding: 1px 3px;
-      }
-      #stateReader .selected{
-        background: rgba(255,255,255,0.4);
-      }
-      .keys{
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 12px;
-      }
-      .hotkey{
-        color: lightblue;
-        font-weight: bold;
-      }
     </style>
   </head>
   <body>
     <canvas id="canvas">
     </canvas>
-    <div id="stateReader">
-      <table>
-        <tr id="head">
-          <td>______ <span class="keys">[A Z]</span></td>
-          <td>state <span class="keys">[J N]</span></td>
-          <td class="phase2">swing <span class="keys">[K M]</span></td>
-          <td class="phase2">freq  <span class="keys">[L ,]</span></td>
-        </tr>
-        <tr id="quirkkUI" class="selected">
-          <td>quirkk <span class="keys">[Q]</span></td>
-          <td><span id="quirkkState">0</span></td>
-          <td class="phase2"><span id="quirkkAmplitude">0</span></td>
-          <td class="phase2"><span id="quirkkPeriod">0</span></td>
-        </tr>
-        <tr id="widthhUI">
-          <td>widthh <span class="keys">[W]</span></td>
-          <td><span id="widthhState">0</span></td>
-          <td class="phase2"><span id="widthhAmplitude">0</span></td>
-          <td class="phase2"><span id="widthhPeriod">0</span></td>
-        </tr>
-        <tr id="energyUI">
-          <td>energy <span class="keys">[E]</span></td>
-          <td><span id="energyState">0</span></td>
-          <td class="phase2"><span id="energyAmplitude">0</span></td>
-          <td class="phase2"><span id="energyPeriod">0</span></td>
-        </tr>
-        <tr id="repeatUI">
-          <td>repeat <span class="keys">[R]</span></td>
-          <td><span id="repeatState">0</span></td>
-          <td class="phase2"><span id="repeatAmplitude">0</span></td>
-          <td class="phase2"><span id="repeatPeriod">0</span></td>
-        </tr>
-        <tr id="tensorUI">
-          <td>tensor <span class="keys">[T]</span></td>
-          <td><span id="tensorState">0</span></td>
-          <td class="phase2"><span id="tensorAmplitude">0</span></td>
-          <td class="phase2"><span id="tensorPeriod">0</span></td>
-        </tr>
-        <tr id="yessssUI">
-          <td>yessss <span class="keys">[Y]</span></td>
-          <td><span id="yessssState">0</span></td>
-          <td class="phase2"><span id="yessssAmplitude">0</span></td>
-          <td class="phase2"><span id="yessssPeriod">0</span></td>
-        </tr>
-        <tr id="huuuueUI">
-          <td class="phase2">huuuue <span class="keys">[H]</span></td>
-          <td class="phase2"><span id="huuuueRed">255</span>R</td>
-          <td class="phase2"><span id="huuuueGreen">0</span>G</td>
-          <td class="phase2"><span id="huuuueBlue">150</span>B</td>
-        </tr>
-        <tr id="urgncyUI">
-          <td class="phase2">urgncy <span class="keys">[U]</span></td>
-          <td class="phase2" colspan=3><span id="urgncyState">0</span></td>
-        </tr>
-        <tr class="phase2">
-          <td colspan>orbitt <span class="keys">[O]</span></td>
-          <td ><span id="orbittState">0</span></td>
-        </tr>
-        <tr class="phase2" id="pointsUI">
-          <td colspan>points <span class="keys">[P]</span></td>
-          <td colspan=3><span id="pointsState">0</span></td>
-        </tr>
-      </table>
-    </div>
     <script src='./build.js'></script>
   </body>
 </html>

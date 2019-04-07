@@ -1,5 +1,3 @@
-var ui = require('./ui')
-
 var state = {}
 
 function init(){
@@ -11,8 +9,6 @@ function init(){
     modes: ['quirkk', 'widthh', 'energy', 'repeat', 'tensor', 'yessss', 'huuuue', 'urgncy'],
     modeIndex: 0
   }
-  ui.updateState(state)
-  return state
 }
 
 var bounds = {
@@ -36,8 +32,6 @@ function get(){
 
 function set(attr, to){
   state[attr] = to
-  ui.updateState(state)
-  if(attr = 'modeIndex') ui.updateModeSelection(state)
 }
 
 function inc(attr, by){
@@ -48,7 +42,6 @@ function inc(attr, by){
     }
   }
   else{ state[attr] += by }
-  ui.updateState(state)
 }
 
 function dec(attr, by){
@@ -59,8 +52,6 @@ function dec(attr, by){
     }
   }
   else{ state[attr] -= by }
-  ui.updateState(state)
 }
-
 
 module.exports = { init, get, set, inc, dec, mode}

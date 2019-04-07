@@ -1,8 +1,6 @@
 var stateMgmt = require('./stateMgmt')
 var rangesMgmt = require('./rangesMgmt')
 var drawCanvas = require('./drawCanvas')
-var ui = require('./ui')
-
 
 var presets = [
     {repeat: 1,  yessss: 7,  widthh: 19,  tensor: 12, quirkk: 7,   energy: 100}

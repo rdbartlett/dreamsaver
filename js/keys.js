@@ -1,5 +1,4 @@
 var Mousetrap = require('mousetrap')
-var ui = require('./ui')
 var stateMgmt = require('./stateMgmt')
 var state = stateMgmt.get()
 var rangesMgmt = require('./rangesMgmt')
@@ -23,15 +22,6 @@ Mousetrap.bind('0', function() { presets.load(9) });
 Mousetrap.bind('a',  function() { if(state.modeIndex > 0) stateMgmt.set('modeIndex', state.modeIndex-1) })
 Mousetrap.bind('z',  function() { if(state.modeIndex < 7) stateMgmt.set('modeIndex', state.modeIndex+1) })
 
-Mousetrap.bind('q', function() { stateMgmt.set('modeIndex', 0); ui.updateModeSelection(state) })
-Mousetrap.bind('w', function() { stateMgmt.set('modeIndex', 1); ui.updateModeSelection(state) })
-Mousetrap.bind('e', function() { stateMgmt.set('modeIndex', 2); ui.updateModeSelection(state) })
-Mousetrap.bind('r', function() { stateMgmt.set('modeIndex', 3); ui.updateModeSelection(state) })
-Mousetrap.bind('t', function() { stateMgmt.set('modeIndex', 4); ui.updateModeSelection(state) })
-Mousetrap.bind('y', function() { stateMgmt.set('modeIndex', 5); ui.updateModeSelection(state) })
-Mousetrap.bind('h', function() { stateMgmt.set('modeIndex', 6); ui.updateModeSelection(state) })
-Mousetrap.bind('u', function() { stateMgmt.set('modeIndex', 7); ui.updateModeSelection(state) })
-
 Mousetrap.bind('j',  incState)
 Mousetrap.bind('n',  decState)
 Mousetrap.bind('k',  incSwing)
@@ -45,7 +35,6 @@ function incState(){
     animate.resetSweep()
   } else if (stateMgmt.mode() == 'huuuue'){
     stateMgmt.inc('red', 5)
-    ui.updateRed(state)
   } else {
     rangesMgmt.inc(stateMgmt.mode(), 'center', 1)
     drawCanvas.updateStateWithRanges()
@@ -59,7 +48,6 @@ function decState(){
     animate.resetSweep()
   } else if (stateMgmt.mode() == 'huuuue'){
     stateMgmt.dec('red', 5)
-    ui.updateRed(state)
   } else {
     rangesMgmt.dec(stateMgmt.mode(), 'center', 1)
     drawCanvas.updateStateWithRanges()
@@ -71,7 +59,6 @@ function incSwing(){
   if (stateMgmt.mode() == 'urgncy') return
   else if (stateMgmt.mode() == 'huuuue') {
     stateMgmt.inc('green', 5)
-    ui.updateGreen(state)
   } else {
     rangesMgmt.inc(stateMgmt.mode(), 'amplitude', 1)
     drawCanvas.updateStateWithRanges()
@@ -83,7 +70,6 @@ function decSwing(){
   if (stateMgmt.mode() == 'urgncy') return
   else if (stateMgmt.mode() == 'huuuue') {
     stateMgmt.dec('green', 5)
-    ui.updateGreen(state)
   } else {
     rangesMgmt.dec(stateMgmt.mode(), 'amplitude', 1)
     drawCanvas.updateStateWithRanges()
@@ -94,18 +80,15 @@ function decSwing(){
 function incFreq(){
   if (stateMgmt.mode() == 'huuuue') {
     stateMgmt.inc('blue', 5)
-    ui.updateBlue(state)
   } else if (stateMgmt.mode() != 'urgncy') rangesMgmt.inc(stateMgmt.mode(), 'freq', 1)
 }
 
 function decFreq(){
   if (stateMgmt.mode() == 'huuuue') {
     stateMgmt.dec('blue', 5)
-    ui.updateBlue(state)
   } else if (stateMgmt.mode() != 'urgncy') rangesMgmt.dec(stateMgmt.mode(), 'freq', 1)
 }
 
-Mousetrap.bind('i', function() { toggleControls() });
 Mousetrap.bind('o', function() { toggle('orbitt') });
 Mousetrap.bind('p', function() { toggle('points') });
 
@@ -118,17 +101,4 @@ function toggle(attr){
   if(state[attr]) stateMgmt.set(attr, false)
   else stateMgmt.set(attr, true)
   drawCanvas.fromState()
-}
-
-showingControls = true
-
-function toggleControls(){
-  if(showingControls) {
-    showingControls = !showingControls
-    document.getElementById('stateReader').style.display = 'none'
-  }
-  else {
-    showingControls = !showingControls
-    document.getElementById('stateReader').style.display = 'block'
-  }
 }
